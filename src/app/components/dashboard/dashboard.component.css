@@ -14,3 +14,22 @@
     padding: 10px;
     border-radius: 5px; 
 }
+
+.dashboard-container {
+    width: 80%; 
+    margin: 0 auto; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffff; 
+}
+
+.dashboard-container {
+    max-width: 1200px; 
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        width: 95%; 
+        padding: 10px; 
+    }
+}
