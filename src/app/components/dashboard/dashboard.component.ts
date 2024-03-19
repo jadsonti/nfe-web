@@ -11,13 +11,13 @@ export class DashboardComponent implements OnInit {
   serviceStatuses: any[] = [];
   filterState: string = '';
   filterDate: Date | null = null;
-  // Defina mais propriedades conforme necessário
+  mostUnavailableStates: string = ''; 
 
   constructor(private statusService: StatusService) { }
 
   ngOnInit(): void {
     this.getStatuses();
-    // Chame mais métodos conforme necessário
+    this.getMostUnavailableStates();
   }
 
   getStatuses(): void {
@@ -45,7 +45,18 @@ export class DashboardComponent implements OnInit {
   }
 
   getFilteredStatusByDate(): void {
-    this.getFilteredStatus(); // Reutilize o mesmo método para simplificar
+    this.getFilteredStatus(); 
   }
 
+  getMostUnavailableStates(): void {
+    this.statusService.getMostUnavailableStates().subscribe(
+      data => {
+        this.mostUnavailableStates = data;
+      }, 
+      error => {
+        console.error('There was an error retrieving the most unavailable states', error);
+      }
+    );
+  }
+  
 }

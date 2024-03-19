@@ -1,3 +1,8 @@
+<div>
+    <h2>Estados com Maior Número de Indisponibilidades:</h2>
+    <p>{{ mostUnavailableStates }}</p>
+</div>
+
 <!-- Adicionando filtro por estado -->
 <label for="filterState">Estado:</label>
 <input type="text" id="filterState" [(ngModel)]="filterState" (input)="getFilteredStatus()">

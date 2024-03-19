@@ -8,7 +8,7 @@ import { formatDate } from '@angular/common';
 })
 export class StatusService {
 
-  private apiUrl = 'http://localhost:8080/api/status'; // Substitua pela URL base do seu back-end
+  private apiUrl = 'http://localhost:8080/api/status'; 
 
   constructor(private http: HttpClient) { }
 
@@ -28,5 +28,9 @@ export class StatusService {
   getServiceStatusByDate(date: Date): Observable<any> {
     const formattedDate = formatDate(date, 'yyyy-MM-dd', 'en-US');
     return this.http.get(`${this.apiUrl}/byDate/${formattedDate}`);
+  }
+
+  getMostUnavailableStates(): Observable<string> { 
+    return this.http.get(`${this.apiUrl}/mostUnavailable`, { responseType: 'text' });
   }
 }
