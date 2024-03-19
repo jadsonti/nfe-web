@@ -1,19 +1,19 @@
 <div>
-    <h2>Estados com Maior Número de Indisponibilidades:</h2>
+    <h2 class="dashboard-title">Estados com Maior Número de Indisponibilidades:</h2>
     <p>{{ mostUnavailableStates }}</p>
 </div>
 
 <!-- Adicionando filtro por estado -->
 <label for="filterState">Estado:</label>
-<input type="text" id="filterState" [(ngModel)]="filterState" (input)="getFilteredStatus()">
+<input type="text" id="filterState" class="dashboard-input" [(ngModel)]="filterState" (input)="getFilteredStatus()">
 
 <!-- Adicionando filtro por data -->
 <label for="filterDate">Data:</label>
-<input type="date" id="filterDate" [(ngModel)]="filterDate" (input)="getFilteredStatusByDate()">
+<input type="date" id="filterDate" class="dashboard-input" [(ngModel)]="filterDate" (input)="getFilteredStatusByDate()">
 
 
 <p>Dashboard works!</p>
-<div *ngFor="let status of serviceStatuses">
+<div *ngFor="let status of serviceStatuses" class="dashboard-status">
     <h3>{{status.state}}</h3>
     <p>Autorizador: {{status.authorizer}}</p>
     <p>Authorização: {{status.authorization}}</p>

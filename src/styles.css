@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+h2 {
+    color: #4a90e2; 
+    text-transform: uppercase; 
+}
+
+input[type="text"], input[type="date"] {
+    border: 1px solid #4a90e2; 
+    border-radius: 5px; 
+    padding: 5px; 
+}

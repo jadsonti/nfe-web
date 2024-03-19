@@ -1,0 +1,16 @@
+.dashboard-title {
+    color: #d9534f; 
+}
+
+.dashboard-input {
+    background-color: #eef1f5;
+    margin-bottom: 10px; 
+}
+
+.dashboard-status {
+    background-color: #f8f9fa; 
+    border-left: 5px solid #4a90e2; 
+    margin-bottom: 10px; 
+    padding: 10px;
+    border-radius: 5px; 
+}

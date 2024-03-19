@@ -17,7 +17,8 @@ export class StatusService {
   }
 
   getServiceStatusByState(state: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/current/${state}`);
+    const upperCaseState = state.toUpperCase();
+    return this.http.get(`${this.apiUrl}/current/${upperCaseState}`);
   }
 
   getServiceStatusByStateAndDate(state: string, date: Date): Observable<any> {
