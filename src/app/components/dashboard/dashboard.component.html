@@ -1,0 +1,22 @@
+<!-- Adicionando filtro por estado -->
+<label for="filterState">Estado:</label>
+<input type="text" id="filterState" [(ngModel)]="filterState" (input)="getFilteredStatus()">
+
+<!-- Adicionando filtro por data -->
+<label for="filterDate">Data:</label>
+<input type="date" id="filterDate" [(ngModel)]="filterDate" (input)="getFilteredStatusByDate()">
+
+
+<p>Dashboard works!</p>
+<div *ngFor="let status of serviceStatuses">
+    <h3>{{status.state}}</h3>
+    <p>Autorizador: {{status.authorizer}}</p>
+    <p>Authorização: {{status.authorization}}</p>
+    <p>Retorno de Authorização: {{status.returnAuthorization}}</p>
+    <p>Inutilização: {{status.inutilization}}</p>
+    <p>Consulta de Protocolo: {{status.protocolQuery}}</p>
+    <p>Status do Serviço: {{status.serviceStatus}}</p>
+    <p>Consulta de Cadastro: {{status.registrationQuery}}</p>
+    <p>Recepção de Evento: {{status.eventReception}}</p>
+    <p>Data: {{status.date | date}}</p>
+</div>
